@@ -8,15 +8,15 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[Construct Blog CI]]></title>
-            <link>https://chlee-tlowac.github.io/blog/construct-blog-ci</link>
-            <guid>construct-blog-ci</guid>
-            <pubDate>Tue, 20 Jul 2021 00:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[what-is-diff-url-uri]]></title>
             <link>https://chlee-tlowac.github.io/blog/2021/07/20/what-is-diff-url-uri</link>
             <guid>what-is-diff-url-uri</guid>
+            <pubDate>Tue, 20 Jul 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Construct Blog CI]]></title>
+            <link>https://chlee-tlowac.github.io/blog/construct-blog-ci</link>
+            <guid>construct-blog-ci</guid>
             <pubDate>Tue, 20 Jul 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
