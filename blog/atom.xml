@@ -8,15 +8,15 @@
     <subtitle>TLOWAC Blog</subtitle>
     <icon>https://chlee-tlowac.github.io/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[what-is-diff-url-uri]]></title>
-        <id>what-is-diff-url-uri</id>
-        <link href="https://chlee-tlowac.github.io/blog/2021/07/20/what-is-diff-url-uri"/>
-        <updated>2021-07-20T00:00:00.000Z</updated>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Construct Blog CI]]></title>
         <id>construct-blog-ci</id>
         <link href="https://chlee-tlowac.github.io/blog/construct-blog-ci"/>
+        <updated>2021-07-20T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[what-is-diff-url-uri]]></title>
+        <id>what-is-diff-url-uri</id>
+        <link href="https://chlee-tlowac.github.io/blog/2021/07/20/what-is-diff-url-uri"/>
         <updated>2021-07-20T00:00:00.000Z</updated>
     </entry>
     <entry>
