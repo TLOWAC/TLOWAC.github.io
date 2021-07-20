@@ -1,0 +1,1 @@
+(self.webpackChunkchlee_story=self.webpackChunkchlee_story||[]).push([[8115],{9630:function(e){"use strict";e.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"commit","name":"commit","count":1,"permalink":"/blog/tags/commit"}')}}]);

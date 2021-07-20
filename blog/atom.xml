@@ -2,15 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chlee-tlowac.github.io/blog</id>
     <title>TLOWAC Blog</title>
-    <updated>2021-07-19T00:00:00.000Z</updated>
+    <updated>2021-07-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chlee-tlowac.github.io/blog"/>
     <subtitle>TLOWAC Blog</subtitle>
     <icon>https://chlee-tlowac.github.io/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[deploy]]></title>
-        <id>deploy</id>
-        <link href="https://chlee-tlowac.github.io/blog/2021/07/19/deploy"/>
+        <title type="html"><![CDATA[Construct Blog CI]]></title>
+        <id>construct-blog-ci</id>
+        <link href="https://chlee-tlowac.github.io/blog/construct-blog-ci"/>
+        <updated>2021-07-20T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[what-is-diff-url-uri]]></title>
+        <id>what-is-diff-url-uri</id>
+        <link href="https://chlee-tlowac.github.io/blog/2021/07/20/what-is-diff-url-uri"/>
+        <updated>2021-07-20T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[[ Docusaurus ]]]></title>
+        <id>slug</id>
+        <link href="https://chlee-tlowac.github.io/blog/slug"/>
         <updated>2021-07-19T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[[ Docusaurus ]]]></summary>
     </entry>
