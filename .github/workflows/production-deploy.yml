@@ -32,7 +32,7 @@ jobs:
         yarn build
 
     - name: Blog deploy # 블로그 배포
-      run: yarn ci 
+      run: yarn deploy 
 
     - name: if fail
       uses: actions/github-script@v4.0.2
