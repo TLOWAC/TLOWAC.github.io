@@ -1,0 +1,43 @@
+name: Blog CI
+
+on:
+  push:
+    branches: [ prod/deploy ] # prod/deploy 브랜치에 push 될 경우에 해당 action 을 실행
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.16.1]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+    - uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Package Install # 모듈 다운로드
+      run: |
+        yarn install
+    - name: Blog build # 블로그 빌드
+      run: |
+        yarn build
+    - run: yarn ci # 블로그 배포
+    - name: if fail
+      uses: actions/github-script@v4.0.2
+      with:
+        github-token: ${{github.token}}
+        script: |
+          const ref = "${{github.ref}}"
+          const pull_number = Number(ref.split("/")[2])
+          await github.pulls.createReview({
+            ...context.repo,
+            pull_number,
+            body:"빌드에 실패하였습니다 :( 🙏🙏😛",
+            event: "REQUEST_CHANGES"
+          })
+      if: failure()
