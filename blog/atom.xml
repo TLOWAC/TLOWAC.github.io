@@ -8,11 +8,11 @@
     <subtitle>TLOWAC Blog</subtitle>
     <icon>https://chlee-tlowac.github.io/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[deploy]]></title>
-        <id>deploy</id>
-        <link href="https://chlee-tlowac.github.io/blog/2021/07/19/deploy"/>
+        <title type="html"><![CDATA[[ Docusaurus ]]]></title>
+        <id>slug</id>
+        <link href="https://chlee-tlowac.github.io/blog/slug"/>
         <updated>2021-07-19T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[[ Docusaurus ]]]></summary>
+        <summary type="html"><![CDATA[[ Docusaurus 99% ]]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>

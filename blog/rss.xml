@@ -8,11 +8,11 @@
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[deploy]]></title>
-            <link>https://chlee-tlowac.github.io/blog/2021/07/19/deploy</link>
-            <guid>deploy</guid>
+            <title><![CDATA[[ Docusaurus ]]]></title>
+            <link>https://chlee-tlowac.github.io/blog/slug</link>
+            <guid>slug</guid>
             <pubDate>Mon, 19 Jul 2021 00:00:00 GMT</pubDate>
-            <description><![CDATA[[ Docusaurus ]]]></description>
+            <description><![CDATA[[ Docusaurus 99% ]]]></description>
         </item>
         <item>
             <title><![CDATA[Welcome]]></title>
