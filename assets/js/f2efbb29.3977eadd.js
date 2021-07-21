@@ -1,1 +1,0 @@
-(self.webpackChunkchlee_story=self.webpackChunkchlee_story||[]).push([[479],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"[ Docusaurus ]","permalink":"/blog/slug"},{"title":"Welcome","permalink":"/blog/welcome"},{"title":"Hello","permalink":"/blog/hello-world"},{"title":"Hola","permalink":"/blog/hola"}]}')}}]);
