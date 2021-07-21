@@ -16,18 +16,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
-    - uses: actions/setup-node@v2
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
     - name: Package Install # 모듈 다운로드
       run: |
         yarn install
+
     - name: Blog build # 블로그 빌드
       run: |
         yarn build
-    - run: yarn ci # 블로그 배포
+
+    - name: Blog deploy # 블로그 배포
+      run: yarn ci 
+
     - name: if fail
       uses: actions/github-script@v4.0.2
       with:
