@@ -6,45 +6,65 @@ on:
     branches:  [ prod/deploy ]
 
 jobs:
-  build:
-
+  checks:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [14.16.1]
-
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-
-    - name: Package Install # 모듈 다운로드
-      run: |
-        yarn install
-
-    - name: Blog build # 블로그 빌드
-      run: |
-        yarn build
-
-    - name: Blog deploy # 블로그 배포
-      run: yarn ci 
-
-    - name: if fail
-      uses: actions/github-script@v4.0.2
-      with:
-        github-token: ${{github.token}}
-        script: |
-          const ref = "${{github.ref}}"
-          const pull_number = Number(ref.split("/")[2])
-          await github.pulls.createReview({
-            ...context.repo,
-            pull_number,
-            body:"빌드에 실패하였습니다 :( 🙏🙏😛",
-            event: "REQUEST_CHANGES"
-          })
-      if: failure()
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Test Build
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          yarn install
+          fi
+          yarn build
+      - name: if fail
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{github.token}}
+          script: |
+            const ref = "${{github.ref}}"
+            const pull_number = Number(ref.split("/")[2])
+            await github.pulls.createReview({
+              ...context.repo,
+              pull_number,
+              body:"빌드에 실패하였습니다 :( 🙏🙏😛",
+              event: "REQUEST_CHANGES"
+            })
+        if: failure()
+  gh-release:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: Build
+        run: |
+          yarn build
+      - name: Release to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+      - name: if fail
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{github.token}}
+          script: |
+            const ref = "${{github.ref}}"
+            const pull_number = Number(ref.split("/")[2])
+            await github.pulls.createReview({
+              ...context.repo,
+              pull_number,
+              body:"빌드에 실패하였습니다 :( 🙏🙏😛",
+              event: "REQUEST_CHANGES"
+            })
+        if: failure()
