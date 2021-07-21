@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "doc:start": "docusaurus start",
-    "doc:build": "docusaurus build",
+    "build": "docusaurus build",
     "doc:swizzle": "docusaurus swizzle",
     "doc:deploy": "GIT_USER=chlee-tlowac USE_SSH=true DEPLOYMENT_BRANCH=gh-pages CURRENT_BRANCH=master docusaurus deploy",
     "deploy": "gh-pages -d build",
