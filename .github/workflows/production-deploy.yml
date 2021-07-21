@@ -1,8 +1,9 @@
 name: Blog CI
 on:
   push:
-  branches:
-  - prod/deploy  # prod/deploy 브랜치에 push 될 경우에 해당 action 을 실행
+    branches: [ prod/deploy ]  # prod/deploy 브랜치에 push 될 경우에 해당 action 을 실행
+  pull_request:
+    branches:  [ prod/deploy ]
 
 jobs:
   build:
