@@ -19,3 +19,6 @@ pages:
 frontend:
   - any: ["src/**/*.ts"]
     all: ["!src/**/main.ts", "!src/**/app.ts"]
+
+dependencies:
+  -any: ["src/**/yarn.lock"]
