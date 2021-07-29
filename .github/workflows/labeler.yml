@@ -2,10 +2,10 @@ name: "Labeler"
 on: [pull_request]
 
 jobs:
-  triage:
+  labeler:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/labeler@v2
+      - uses: actions/labeler@master
         with:
+          configuration-path: "./.github/actions/labeler.yml"
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          configuration-path: ".github/actions/labeler.yml"
