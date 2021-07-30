@@ -1,12 +1,17 @@
-name: "Labeler"
-on:
-  - pull_request_target
+name: Labeler
+
+# On pull requests
+on: [pull_request_target]
 
 jobs:
-  labeler:
+  triage:
+    name: Label
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/labeler@v3
+      - name: 🔖 Label
+        uses: actions/labeler@v3
         with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           configuration-path: ".github/labeler.yml"
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
