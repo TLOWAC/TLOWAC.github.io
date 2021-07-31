@@ -1,0 +1,24 @@
+test:
+  - any: ["__tests__/**/*"]
+
+markdown:
+  - any: ["src/**/*.md"]
+
+blog:
+  - any: ["./blog/**/*.md"]
+
+docs:
+  - any: ["./docs/**/*.md"]
+
+components:
+  -any: ["src/component/**/*"]
+
+pages:
+  -any: ["src/pages/**/*"]
+
+frontend:
+  - any: ["src/**/*.ts"]
+    all: ["!src/**/main.ts", "!src/**/app.ts"]
+
+dependencies:
+  -any: ["src/**/yarn.lock"]
