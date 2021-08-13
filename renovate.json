@@ -5,8 +5,10 @@
   "packageRules": [
     {
       "updateTypes": [
+        "minor",
         "patch",
-        "pin"
+        "pin",
+        "digest"
       ],
       "automerge": true
     }
