@@ -11,14 +11,14 @@ docs:
   - any: ["./docs/**/*.md"]
 
 components:
-  -any: ["src/component/**/*"]
+  - any: ["src/component/**/*"]
 
 pages:
-  -any: ["src/pages/**/*"]
+  - any: ["src/pages/**/*"]
 
 frontend:
   - any: ["src/**/*.ts"]
     all: ["!src/**/main.ts", "!src/**/app.ts"]
 
 dependencies:
-  -any: ["src/**/yarn.lock"]
+  - any: ["src/**/yarn.lock"]
