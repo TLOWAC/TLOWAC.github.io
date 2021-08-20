@@ -1,8 +1,5 @@
-on:
-  pull_request:
-    types: [opened]
-# name: Labeler
-# on: [pull_request]
+name: Labeler
+on: [pull_request]
 
 jobs:
   label:
