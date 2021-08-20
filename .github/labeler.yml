@@ -1,24 +1,62 @@
+README:
+  - ./README.md
+
+CHANGELOG:
+  - ./CHANGELOG.md
+
 test:
-  - any: ["__tests__/**/*"]
+  - any: ["src/**/*.spec.tsx", "src/**/*.spec.ts"]
 
-markdown:
-  - any: ["src/**/*.md"]
-
-blog:
-  - any: ["./blog/**/*.md"]
-
-docs:
-  - any: ["./docs/**/*.md"]
+source:
+  - any: ["src/**/*", "!src/docs/*"]
 
 components:
-  -any: ["src/component/**/*"]
+  - any: ["src/Components/**/*"]
 
-pages:
-  -any: ["src/pages/**/*"]
+views:
+  - any: ["src/Views/**/*"]
 
-frontend:
-  - any: ["src/**/*.ts"]
-    all: ["!src/**/main.ts", "!src/**/app.ts"]
+contexts:
+  - any: ["src/Contexts/**/*"]
+
+snapshot:
+  - any: ["src/**/*.tsx.snap"]
+
+BrandAdmin:
+  - any: ["src/Views/Brand/**/*"]
+
+DeviceManangement:
+  - any: ["src/Views/DeviceManagement/**/*"]
+
+Advertisement:
+  - any: ["src/Views/Advertisement/**/*"]
+
+BrandManagement:
+  - any: ["src/Views/BrandManagement/**/*"]
+
+Calculation:
+  - any: ["src/Views/Calculate/**/*"]
+
+Statistics:
+  - any: ["src/Views/Statistics/**/*"]
+
+Store:
+  - any: ["src/Views/Store/**/*"]
+
+StoreManagement:
+  - any: ["src/Views/StoreManagement/**/*"]
+
+ApolloTesting:
+  - any: ["src/apolloTest/**/*"]
+
+Theme:
+  - any: ["src/theme/**/*"]
+
+Utils:
+  - any: ["src/utils/**/*"]
+
+action:
+  - any: [".github/**/*"]
 
 dependencies:
-  -any: ["src/**/yarn.lock"]
+  - ./yarn.lock
