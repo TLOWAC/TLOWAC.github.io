@@ -17,7 +17,7 @@ jobs:
         if: ${{github.event.action == 'opened'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:Opened"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -26,7 +26,7 @@ jobs:
         if: ${{github.event.action == 'reopened'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:Reopened"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -35,7 +35,7 @@ jobs:
         if: ${{github.event.action == 'closed'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:Closed"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -44,7 +44,7 @@ jobs:
         if: ${{(github.event.action == 'edited') && (github.event.changes.body != null)}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:Edited:body"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -53,7 +53,7 @@ jobs:
         if: ${{(github.event.action == 'edited') && (github.event.changes.title != null)}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:Edited:title"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -62,7 +62,7 @@ jobs:
         if: ${{github.event.action == 'assigned'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:Assigned"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -82,7 +82,7 @@ jobs:
         if: ${{github.event.action == 'created'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:comment:Created"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -91,7 +91,7 @@ jobs:
         if: ${{github.event.action == 'deleted'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:comment:Deleted"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -100,7 +100,7 @@ jobs:
         if: ${{github.event.action == 'edited'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Issue:comment:Edited"
           SLACK_MESSAGE: ${{github.event.issue.title}}
@@ -120,7 +120,7 @@ jobs:
         if: ${{github.event.pages[0].action == 'created'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Wiki:Created"
           SLACK_MESSAGE: ${{github.event.pages[0].title}}
@@ -129,7 +129,7 @@ jobs:
         if: ${{github.event.pages[0].action == 'edited'}}
         uses: rtCamp/action-slack-notify@v2.0.0
         env:
-          SLACK_CHANNEL: github-actions-experiment
+          SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_TITLE: "${{ github.repository }} Wiki:Edited"
           SLACK_MESSAGE: ${{github.event.pages[0].title}}
