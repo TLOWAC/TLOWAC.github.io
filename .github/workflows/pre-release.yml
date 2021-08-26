@@ -1,0 +1,67 @@
+name: Blog Pre-Release
+on:
+  push: # prod/deploy 브랜치에 push 될 경우에 해당 action 을 실행
+    branches: [prod/deploy]
+  pull_request: # prod/deploy 브랜치에 PR 이 열릴 경우에 해당 action 을 실행
+    types: [opened, reopened]
+    branches: [prod/deploy]
+
+jobs:
+  build-checks:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+
+      - name: Test Build
+        run: |
+          if [ -e yarn.lock ]; then
+          yarn install --frozen-lockfile
+          elif [ -e package-lock.json ]; then
+          npm ci
+          else
+          yarn install
+          fi
+          yarn build
+
+      - name: Github Pull-Request Comment On Success
+        if: failure()
+        uses: actions/github-script@v4.0.2
+        with:
+          github-token: ${{github.token}}
+          script: |
+            const ref = "${{github.ref}}"
+            const pull_number = Number(ref.split("/")[2])
+            await github.pulls.createReview({
+              ...context.repo,
+              pull_number,
+              body:"빌드에 실패하였습니다 :( 🙏🙏🙏🙏🙏",
+              event: "REQUEST_CHANGES"
+            })
+
+      - name: Slack Notification on SUCCESS
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: notify-blog-release
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'green' or '#ff00ff'
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_TITLE: "${{ github.repository }}"
+          SLACK_MESSAGE: "[ 'Blog' ] 빌드에 성공 하였습니다. :rocket:"
+          SLACK_USERNAME: rtCamp
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+      - name: Slack Notification on Failure
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: notify-blog-release
+          SLACK_COLOR: ${{ job.status }} # or a specific color like 'green' or '#ff00ff'
+          SLACK_ICON: https://github.com/rtCamp.png?size=48
+          SLACK_TITLE: "${{ github.repository }}"
+          SLACK_MESSAGE: "[ 'Blog' ] 빌드에 실패 하였습니다. :rocket:"
+          SLACK_USERNAME: rtCamp
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
