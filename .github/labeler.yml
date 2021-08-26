@@ -4,56 +4,11 @@ README:
 CHANGELOG:
   - ./CHANGELOG.md
 
-test:
-  - any: ["src/**/*.spec.tsx", "src/**/*.spec.ts"]
+pages:
+  - any: ["src/pages/**/*"]
 
-source:
-  - any: ["src/**/*", "!src/docs/*"]
-
-components:
-  - any: ["src/Components/**/*"]
-
-views:
-  - any: ["src/Views/**/*"]
-
-contexts:
-  - any: ["src/Contexts/**/*"]
-
-snapshot:
-  - any: ["src/**/*.tsx.snap"]
-
-BrandAdmin:
-  - any: ["src/Views/Brand/**/*"]
-
-DeviceManangement:
-  - any: ["src/Views/DeviceManagement/**/*"]
-
-Advertisement:
-  - any: ["src/Views/Advertisement/**/*"]
-
-BrandManagement:
-  - any: ["src/Views/BrandManagement/**/*"]
-
-Calculation:
-  - any: ["src/Views/Calculate/**/*"]
-
-Statistics:
-  - any: ["src/Views/Statistics/**/*"]
-
-Store:
-  - any: ["src/Views/Store/**/*"]
-
-StoreManagement:
-  - any: ["src/Views/StoreManagement/**/*"]
-
-ApolloTesting:
-  - any: ["src/apolloTest/**/*"]
-
-Theme:
-  - any: ["src/theme/**/*"]
-
-Utils:
-  - any: ["src/utils/**/*"]
+templates:
+  - any: ["src/templates/**/*"]
 
 action:
   - any: [".github/**/*"]
