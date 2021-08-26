@@ -1,20 +1,21 @@
 {
-  "extends": [
-    "config:base"
+  "labels": [
+    "maintenance",
+    "renovate"
+  ],
+  "reviewers": [
+    "TLOWAC"
   ],
   "packageRules": [
     {
-      "updateTypes": [
+      "matchUpdateTypes": [
         "minor",
         "patch",
         "pin",
         "digest"
       ],
+      "matchCurrentVersion": "!/^0/",
       "automerge": true
     }
-  ],
-  "reviewers": [
-    "chlee-tlowac"
-  ],
-  "assigneesFromCodeOwners": true
+  ]
 }
