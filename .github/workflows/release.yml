@@ -1,0 +1,28 @@
+name: Blog CI PreDeploy
+on:
+  push: # prod/deploy 브랜치에 push 될 경우에 해당 action 을 실행
+    branches: [prod/deploy]
+  pull_request: # prod/deploy 브랜치에 PR 이 열릴 경우에 해당 action 을 실행
+    types: [opened, reopened]
+    branches: [prod/deploy]
+
+jobs:
+  gh-release:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - name: Package Installation
+        run: |
+          yarn install --frozen-lockfile
+      - name: Build
+        run: |
+          yarn build
+      - name: Release to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
