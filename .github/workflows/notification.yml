@@ -15,7 +15,7 @@ jobs:
       # NOTE: action<open>
       - name: If action is open
         if: ${{github.event.action == 'opened'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -24,7 +24,7 @@ jobs:
       # NOTE: action<reopen>
       - name: If action is reopen
         if: ${{github.event.action == 'reopened'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -33,7 +33,7 @@ jobs:
       # NOTE: action<close>
       - name: If action is close
         if: ${{github.event.action == 'closed'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -42,7 +42,7 @@ jobs:
       # NOTE: action<edited and target == body>
       - name: If action is editing body
         if: ${{(github.event.action == 'edited') && (github.event.changes.body != null)}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -51,7 +51,7 @@ jobs:
       # NOTE: action<edited and target == title>
       - name: If action is editing title
         if: ${{(github.event.action == 'edited') && (github.event.changes.title != null)}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -60,7 +60,7 @@ jobs:
       # NOTE: action<assigned>
       - name: If action is assign
         if: ${{github.event.action == 'assigned'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -80,7 +80,7 @@ jobs:
       # NOTE: action<created>
       - name: If action is created
         if: ${{github.event.action == 'created'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -89,7 +89,7 @@ jobs:
       # NOTE: action<deleted>
       - name: If action is deleted
         if: ${{github.event.action == 'deleted'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -98,7 +98,7 @@ jobs:
       # NOTE: action<edited>
       - name: If action is edited
         if: ${{github.event.action == 'edited'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -118,7 +118,7 @@ jobs:
       # NOTE: pages.action<created>
       - name: If action is created
         if: ${{github.event.pages[0].action == 'created'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
@@ -127,7 +127,7 @@ jobs:
       # NOTE: pages.action<edited>
       - name: If action is edited
         if: ${{github.event.pages[0].action == 'edited'}}
-        uses: rtCamp/action-slack-notify@v2.0.0
+        uses: rtCamp/action-slack-notify@v2.2.0
         env:
           SLACK_CHANNEL: notify-all
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
