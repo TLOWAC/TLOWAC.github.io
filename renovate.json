@@ -15,7 +15,8 @@
         "digest"
       ],
       "matchCurrentVersion": "!/^0/",
-      "automerge": true
+      "automerge": true,
+      "enable": false
     }
   ]
 }
