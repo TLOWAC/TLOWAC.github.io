@@ -16,7 +16,7 @@
       ],
       "matchCurrentVersion": "!/^0/",
       "automerge": true,
-      "enable": false
+      "enabled": false
     }
   ]
 }
